@@ -1,0 +1,5 @@
+# Needed for DNS resolution.  Present in OpenJDK, but not Android
+-dontwarn javax.naming.**
+
+# GrpcUtil is calling getPackage().getImplementationVersion().
+-keeppackagenames io.grpc.internal

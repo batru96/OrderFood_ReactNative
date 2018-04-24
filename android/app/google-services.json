@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "405105266920",
+    "firebase_url": "https://orderfood-a09f5.firebaseio.com",
+    "project_id": "orderfood-a09f5",
+    "storage_bucket": "orderfood-a09f5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:405105266920:android:8cd4974188ed4d22",
+        "android_client_info": {
+          "package_name": "com.batru.orderfood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "405105266920-3id86eccpc841d92m1qd66j80ok8iotu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWAmIdpYiiK2KhVI-O6N902QRPZqvHSxU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
