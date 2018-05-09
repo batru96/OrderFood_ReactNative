@@ -2,23 +2,11 @@ import React, { Component } from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
-import getPhone from '../../api/getPhoneNumber';
 
 class Footer extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            phone: '',
-            address: ''
-        };
-    }
-
-    componentDidMount() {
-        getPhone()
-            .then(value => {
-                this.setState({phone: value});
-            })
-            .catch(err => console.log(err));
+        this.state = { address: '' };
     }
 
     render() {
@@ -39,23 +27,23 @@ class Footer extends Component {
             </View>
         );
     }
+
     submit() {
-        const { phone, address } = this.state;
+        const { address } = this.state;
         const { cartArray, totalPrice } = this.props;
+        const phone = firebase.auth().currentUser._user.phoneNumber;
         if (address === '') {
             Alert.alert(undefined, 'Enter your address!');
             return;
         }
-        const value = {
-            phone,
-            address,
-            cartArray,
-            status: 0,
-            totalPrice
-        };
-        const rootRef = firebase.database().ref();
-        const newRef = rootRef.child('Ordered');
-        newRef.push().set(value, (err) => {
+        if (phone == null) {
+            Alert.alert(undefined, 'Please provide your phone number');
+            return;
+        }
+
+        const value = { phone, address, cartArray, status: 0, totalPrice };
+        const orderedRef = firebase.database().ref().child('Ordered');
+        orderedRef.push().set(value, (err) => {
             if (err) {
                 console.log(err);
                 return;

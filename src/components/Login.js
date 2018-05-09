@@ -1,38 +1,31 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet, Image, Text, View, ImageBackground, TouchableOpacity, Alert
+  StyleSheet, Image, Text, View, ImageBackground, TouchableOpacity, 
+  Alert
 } from 'react-native';
+import { connect } from 'react-redux';
+import firebase from 'react-native-firebase';
 import Buttons from './login/Buttons';
 import SignIn from './login/SignIn';
 import SignUp from './login/SignUp';
 import background from './../images/my_bg.jpg';
 import logo from './../images/logo_eat_it.png';
-import getPhone from '../api/getPhoneNumber';
 
 class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      layout: 0
-    };
+  componentWillMount() {
+    setTimeout(() => {
+      const { navigation } = this.props;
+      firebase.auth().signInAnonymouslyAndRetrieveData()
+        .then(data => {
+          navigation.navigate({ routeName: 'HOME' });
+        })
+        .catch(err => console.log(err));
+    }, 1000);
   }
-
-  componentDidMount() {
-    const { navigation } = this.props;
-    getPhone()
-      .then(phone => {
-        if (phone !== '' && phone !== null) {
-          setTimeout(() => navigation.navigate('HOME'), 1000);
-        }
-      });
-  }
-
   render() {
     const { container } = styles;
     return (
-      <ImageBackground style={container} source={background} >
-        {this.getLayout()}
-        <Buttons onChange={this.changeLayout.bind(this)} />
+      <ImageBackground style={container} source={background}>
       </ImageBackground>
     );
   }

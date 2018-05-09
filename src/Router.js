@@ -7,7 +7,6 @@ import Products from './components/Products';
 import Drawer from './components/Drawer';
 import Cart from './components/Cart';
 import OrderHistory from './components/OrderHistory';
-import getSignInState from './api/getSignInState';
 
 const navigationOptions = {
     header: null

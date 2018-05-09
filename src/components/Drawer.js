@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import {
-    View, Text, TouchableOpacity, StyleSheet, Image
+    View, Text, TouchableOpacity, StyleSheet, Image, Alert
 } from 'react-native';
+import firebase from 'react-native-firebase';
 import icIcon from '../icons/ic_menu.png';
-import savePhone from '../api/savePhoneNumber';
+
 
 class Drawer extends Component {
     constructor(props) {
@@ -41,14 +42,14 @@ class Drawer extends Component {
                 navigation.navigate({ routeName: 'CART' });
                 break;
             case 'Ordered':
+                const { phoneNumber } = firebase.auth().currentUser._user;
                 navigation.navigate({ routeName: 'ORDER_HISTORY' });
                 break;
             case 'Signout':
-                savePhone('');
                 navigation.navigate({ routeName: 'SIGN_IN' });
                 break;
             default:
-                navigation.navigate('DrawerClose')
+                navigation.navigate('DrawerClose');
                 break;
         }
     }

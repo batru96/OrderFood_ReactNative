@@ -11,9 +11,7 @@ import getCart from '../api/GetCart';
 class Menu extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            mang: []
-        };
+        this.state = { mang: [] };
     }
 
     componentDidMount() {
