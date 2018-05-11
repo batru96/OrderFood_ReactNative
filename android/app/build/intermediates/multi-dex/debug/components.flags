@@ -1,5 +1,5 @@
--injars /home/batru/Learning/ReactNative/OrderFood/android/app/build/intermediates/transforms/jarMerging/debug/jars/1/1f/combined.jar
--outjars /home/batru/Learning/ReactNative/OrderFood/android/app/build/intermediates/multi-dex/debug/componentClasses.jar
+-injars '/home/batru/Desktop/Tài liệu/OrderFood_ReactNative/android/app/build/intermediates/transforms/jarMerging/debug/jars/1/1f/combined.jar'
+-outjars '/home/batru/Desktop/Tài liệu/OrderFood_ReactNative/android/app/build/intermediates/multi-dex/debug/componentClasses.jar'
 
 -libraryjars /home/batru/Android/Sdk/build-tools/23.0.1/lib/shrinkedAndroid.jar
 
@@ -10,7 +10,7 @@
 -dontpreverify
 -dontnote **
 -dontwarn **
--printconfiguration /home/batru/Learning/ReactNative/OrderFood/android/app/build/intermediates/multi-dex/debug/components.flags
+-printconfiguration '/home/batru/Desktop/Tài liệu/OrderFood_ReactNative/android/app/build/intermediates/multi-dex/debug/components.flags'
 
 
 -keep class com.batru.orderfood.MainApplication {

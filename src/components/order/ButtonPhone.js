@@ -1,14 +1,27 @@
-import React, { Component } from 'react'
-import { View, TextInput, TouchableOpacity, Text, StyleSheet, Alert } from 'react-native'
-import firebase from 'react-native-firebase'
+import React, { Component } from 'react';
+import { 
+    View, TextInput, TouchableOpacity, Text, StyleSheet, Alert 
+} from 'react-native';
+import savePhone from '../../api/savePhoneNumber';
 
 export default class extends Component {
     constructor(props) {
-        super(props)
-        this.state = { phone: '' }
+        super(props);
+        this.state = { phone: '' };
     }
+    
+    submit() {
+        const { phone } = this.state;
+        if (phone === '') {
+            Alert.alert(undefined, 'Enter your phong number!');
+            return;
+        }
+        savePhone(phone);
+        this.props.toggle();
+    }
+
     render() {
-        const { container, button, title, input } = styles
+        const { container, button, title, input } = styles;
         return (
             <View style={container}>
                 <Text style={title}>Enter your phone number</Text>
@@ -23,16 +36,7 @@ export default class extends Component {
                     <Text>Enter</Text>
                 </TouchableOpacity>
             </View>
-        )
-    }
-    submit() {
-        const { phone } = this.state
-        if (phone === '') {
-            Alert.alert(undefined, 'Enter your phong number!')
-            return
-        }
-        firebase.auth().currentUser._user.phoneNumber = phone
-        this.props.toggle()
+        );
     }
 }
 
@@ -59,4 +63,4 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 4
     }
-})
+});

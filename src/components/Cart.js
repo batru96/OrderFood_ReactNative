@@ -8,6 +8,23 @@ import Header from './cart/Header';
 import Footer from './cart/Footer';
 
 class Cart extends Component {
+    getTotalPrice() {
+        let totalPrice = 0;
+        this.props.mang.forEach(item => {
+            const price = item.price.replace(/[^0-9]/g, '');
+            totalPrice += (price * item.num);
+        });
+        return `$${totalPrice}`;
+    }
+    checkOut() {
+        const { mang, dispatch } = this.props;
+        if (mang.length === 0) {
+            Alert.alert(undefined, 'Empty cart');
+            return;
+        }
+        dispatch({ type: 'TOGGLE INPUT' });
+    }
+
     render() {
         const { button, buttonText } = styles;
         const { isInputVisible, navigation, mang } = this.props;
@@ -28,25 +45,11 @@ class Cart extends Component {
                         Total: {this.getTotalPrice()}{isInputVisible ? ' || Hide' : ''}
                     </Text>
                 </TouchableOpacity>
-                {isInputVisible ? <Footer totalPrice={this.getTotalPrice()} /> : null}
+                {isInputVisible ?
+                    <Footer totalPrice={this.getTotalPrice()} /> : null
+                }
             </View>
         );
-    }
-    getTotalPrice() {
-        let totalPrice = 0;
-        this.props.mang.forEach(item => {
-            const price = item.price.replace(/[^0-9]/g, '');
-            totalPrice += (price * item.num);
-        });
-        return `$${totalPrice}`;
-    }
-    checkOut() {
-        const { mang, dispatch } = this.props;
-        if (mang.length === 0) {
-            Alert.alert(undefined, 'Empty cart');
-            return;
-        }
-        dispatch({ type: 'TOGGLE INPUT' });
     }
 }
 
