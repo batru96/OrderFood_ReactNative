@@ -1,43 +1,41 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import {
+    View, Text, TextInput, StyleSheet, TouchableOpacity, Alert
+} from 'react-native';
 import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
+import getPhone from '../../api/getPhoneNumber';
 
 class Footer extends Component {
     constructor(props) {
         super(props);
-        this.state = { address: '' };
+        this.state = {
+            address: '',
+            isShowPhoneInput: false,
+            phone: null
+        };
     }
 
-    render() {
-        const { container, input, button, btnText } = styles;
-        const { phone, address } = this.state;
-        return (
-            <View style={container}>
-                <TextInput
-                    style={input}
-                    placeholder='Enter your address'
-                    underlineColorAndroid='transparent'
-                    value={address}
-                    onChangeText={value => this.setState({ address: value })}
-                />
-                <TouchableOpacity style={button} onPress={this.submit.bind(this)}>
-                    <Text style={btnText}>SUBMIT</Text>
-                </TouchableOpacity>
-            </View>
-        );
+    componentDidMount() {
+        getPhone()
+            .then(phone => {
+                if (phone == null) {
+                    Alert.alert('Please provide your phone number');
+                    this.setState({
+                        isShowPhoneInput: true,
+                    });
+                } else {
+                    this.setState({ phone });
+                }
+            })
+            .catch(error => console.log(error));
     }
 
     submit() {
-        const { address } = this.state;
+        const { address, phone } = this.state;
         const { cartArray, totalPrice } = this.props;
-        const phone = firebase.auth().currentUser._user.phoneNumber;
         if (address === '') {
             Alert.alert(undefined, 'Enter your address!');
-            return;
-        }
-        if (phone == null) {
-            Alert.alert(undefined, 'Please provide your phone number');
             return;
         }
 
@@ -50,13 +48,40 @@ class Footer extends Component {
             }
             Alert.alert(undefined, 'Order success', undefined, { cancelable: false });
             this.setState({ address: '' });
-            this.props.dispatch({
-                type: 'TOGGLE INPUT'
-            });
+            this.props.toggle();
             this.props.dispatch({
                 type: 'CLEAR_CART'
             });
         });
+    }
+
+    render() {
+        const { container, input, button, btnText } = styles;
+        const { phone, address, isShowPhoneInput } = this.state;
+        return (
+            <View style={container}>
+                <TextInput
+                    style={input}
+                    placeholder='Enter your address'
+                    underlineColorAndroid='transparent'
+                    value={address}
+                    onChangeText={value => this.setState({ address: value })}
+                />
+                {
+                    isShowPhoneInput ?
+                        <TextInput
+                            style={input}
+                            placeholder='Enter your phone'
+                            underlineColorAndroid='transparent'
+                            value={phone}
+                            onChangeText={value => this.setState({ phone: value })}
+                        /> : null
+                }
+                <TouchableOpacity style={button} onPress={this.submit.bind(this)}>
+                    <Text style={btnText}>SUBMIT</Text>
+                </TouchableOpacity>
+            </View>
+        );
     }
 }
 

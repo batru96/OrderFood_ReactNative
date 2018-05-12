@@ -8,6 +8,11 @@ import Header from './cart/Header';
 import Footer from './cart/Footer';
 
 class Cart extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { isInputVisible: false };
+    }
+
     getTotalPrice() {
         let totalPrice = 0;
         this.props.mang.forEach(item => {
@@ -16,18 +21,26 @@ class Cart extends Component {
         });
         return `$${totalPrice}`;
     }
+
     checkOut() {
-        const { mang, dispatch } = this.props;
+        const { mang } = this.props;
         if (mang.length === 0) {
             Alert.alert(undefined, 'Empty cart');
             return;
         }
-        dispatch({ type: 'TOGGLE INPUT' });
+        this.toggleInput();
+    }
+
+    toggleInput() {
+        this.setState({
+            isInputVisible: !this.state.isInputVisible
+        });
     }
 
     render() {
+        const { isInputVisible } = this.state;
         const { button, buttonText } = styles;
-        const { isInputVisible, navigation, mang } = this.props;
+        const { navigation, mang } = this.props;
         return (
             <View style={{ flex: 1 }}>
                 <Header navigation={navigation} title='Cart' />
@@ -45,8 +58,12 @@ class Cart extends Component {
                         Total: {this.getTotalPrice()}{isInputVisible ? ' || Hide' : ''}
                     </Text>
                 </TouchableOpacity>
-                {isInputVisible ?
-                    <Footer totalPrice={this.getTotalPrice()} /> : null
+                {
+                    isInputVisible ?
+                    <Footer
+                        toggle={this.toggleInput.bind(this)}
+                        totalPrice={this.getTotalPrice()} 
+                    /> : null
                 }
             </View>
         );
