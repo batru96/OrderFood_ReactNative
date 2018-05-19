@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import Header from './cart/Header';
+import ButtonPhone from './order/ButtonPhone';
 
 class Setting extends Component {
     render() {
@@ -8,7 +9,7 @@ class Setting extends Component {
         return (
             <View>
                 <Header navigation={navigation} title="Setting" />
-                <Text>SETTING PAGE</Text>
+                <ButtonPhone />
             </View>
         );
     }

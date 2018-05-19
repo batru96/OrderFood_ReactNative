@@ -33,7 +33,7 @@ export default class extends Component {
                     onChangeText={text => this.setState({ phone: text })}
                 />
                 <TouchableOpacity style={button} onPress={this.submit.bind(this)}>
-                    <Text>Enter</Text>
+                    <Text>Save</Text>
                 </TouchableOpacity>
             </View>
         );

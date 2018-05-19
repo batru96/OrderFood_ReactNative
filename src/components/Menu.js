@@ -10,6 +10,7 @@ class Menu extends Component {
     constructor(props) {
         super(props);
         this.state = { mang: [] };
+        this.mounted = true;        
     }
 
     componentDidMount() {
@@ -22,7 +23,7 @@ class Menu extends Component {
                     const { name, image } = item.val();
                     menus.push({ id: item.key, name, image });
                 });
-                this.setState({ mang: menus });
+                if (this.mounted === true) this.setState({ mang: menus });
             })
             .catch(err => console.log(err));
         getCart()
@@ -33,7 +34,8 @@ class Menu extends Component {
     }
 
     componentWillUnmount() {
-        this.categoryRef.off();
+        this.mounted = false;
+        this.categoryRef.off('value');
     }
 
     render() {

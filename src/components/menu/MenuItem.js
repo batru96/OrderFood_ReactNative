@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions } from 'react-native';
+import { Text, TouchableOpacity, Image, StyleSheet, Dimensions } from 'react-native';
 
 const { width } = Dimensions.get('window');
 class MenuItem extends Component {
+    onPress() {
+        const { item, navigation } = this.props;
+        navigation.navigate('PRODUCTS', {
+            id: item.id,
+            title: item.name
+        });
+    }
+
     render() {
         const { container, image, text } = styles;
         const { item } = this.props;
@@ -12,13 +20,6 @@ class MenuItem extends Component {
                 <Text style={text}>{item.name}</Text>
             </TouchableOpacity>
         );
-    }
-    onPress() {
-        const { item, navigation } = this.props;
-        navigation.navigate('PRODUCTS', {
-            id: item.id,
-            title: item.name
-        });
     }
 }
 
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
     },
     image: {
         width: width - 16,
-        height: (width - 16) * 588 / 1118
+        height: (width - 16) * (588 / 1118)
     },
     text: {
         textAlign: 'center',
