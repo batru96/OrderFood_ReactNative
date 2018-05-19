@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, TextInput } from 'react-native';
-import firebase from 'react-native-firebase';
 import { connect } from 'react-redux';
-import md5 from 'md5';
 import styles from './styles';
-import savePhone from '../../api/savePhoneNumber';
 
 class SignIn extends Component {
     constructor(props) {

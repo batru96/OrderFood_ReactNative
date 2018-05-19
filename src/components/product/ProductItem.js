@@ -12,39 +12,6 @@ class ProductItem extends Component {
             num: 1
         };
     }
-
-    render() {
-        const {
-            container, image, text, descriptionText, imageContainer, btnsContainer,
-            btnText, orderText
-        } = styles;
-        const { name, description, price } = this.props.item;
-        return (
-            <View style={container}>
-                <Text style={text}>{name.toUpperCase()}</Text>
-                <Text style={descriptionText}>{description}</Text>
-                <Text style={descriptionText}>Price: {price}</Text>
-                <View style={imageContainer}>
-                    <Image source={{ uri: this.props.item.image }} style={image} />
-                </View>
-                <View style={btnsContainer}>
-                    <View style={{ flexDirection: 'row' }}>
-                        <TouchableOpacity onPress={this.minusNumber.bind(this)}>
-                            <Text style={btnText}>-</Text>
-                        </TouchableOpacity>
-                        <Text style={btnText}>{this.state.num}</Text>
-                        <TouchableOpacity onPress={this.plusNumber.bind(this)}>
-                            <Text style={btnText}>+</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <TouchableOpacity onPress={this.order.bind(this)}>
-                        <Text style={orderText}>Order</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
-        );
-    }
-
     minusNumber() {
         if (this.state.num === 1) return;
         this.setState({
@@ -80,8 +47,40 @@ class ProductItem extends Component {
                 }
             });
         } else {
-            Alert.alert(undefined, 'Cannot add to cart beacause it\'s already exists!')
+            Alert.alert(undefined, 'Cannot add to cart beacause it\'s already exists!');
         }
+    }
+
+    render() {
+        const {
+            container, image, text, descriptionText, imageContainer, btnsContainer,
+            btnText, orderText
+        } = styles;
+        const { name, description, price } = this.props.item;
+        return (
+            <View style={container}>
+                <Text style={text}>{name.toUpperCase()}</Text>
+                <Text style={descriptionText}>{description}</Text>
+                <Text style={descriptionText}>Price: {price}</Text>
+                <View style={imageContainer}>
+                    <Image source={{ uri: this.props.item.image }} style={image} />
+                </View>
+                <View style={btnsContainer}>
+                    <View style={{ flexDirection: 'row' }}>
+                        <TouchableOpacity onPress={this.minusNumber.bind(this)}>
+                            <Text style={btnText}>-</Text>
+                        </TouchableOpacity>
+                        <Text style={btnText}>{this.state.num}</Text>
+                        <TouchableOpacity onPress={this.plusNumber.bind(this)}>
+                            <Text style={btnText}>+</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <TouchableOpacity onPress={this.order.bind(this)}>
+                        <Text style={orderText}>Order</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
+        );
     }
 }
 
@@ -101,7 +100,7 @@ const styles = StyleSheet.create({
     },
     image: {
         width: width - 16,
-        height: (width - 16) * 588 / 1118,
+        height: (width - 16) * (588 / 1118),
         borderRadius: 4,
     },
     text: {

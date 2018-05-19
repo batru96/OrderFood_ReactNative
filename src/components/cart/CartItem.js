@@ -1,43 +1,10 @@
 import React, { Component } from 'react';
 import {
-    View, Text, TouchableOpacity, StyleSheet, Image, Dimensions, Alert
+    View, Text, TouchableOpacity, StyleSheet, Image, Alert
 } from 'react-native';
 import { connect } from 'react-redux';
 
-const { width } = Dimensions.get('window');
 class CartItem extends Component {
-    render() {
-        const {
-            container, image, infoContainer, btnsContainer, updateButton,
-            btnText, priceText, nameText, updateButtonText
-        } = styles;
-        const { name, price, num } = this.props.item;
-        return (
-            <View style={container}>
-                <Image source={{ uri: this.props.item.img }} style={image} />
-                <View style={infoContainer}>
-                    <Text style={nameText}>{name.toUpperCase()}</Text>
-                    <Text style={priceText}>Price: {price}</Text>
-                </View>
-                <View style={btnsContainer}>
-                    <View style={{ flexDirection: 'row' }}>
-                        <TouchableOpacity onPress={this.minusNumber.bind(this)}>
-                            <Text style={btnText}>-</Text>
-                        </TouchableOpacity>
-                        <Text style={btnText}>{num}</Text>
-                        <TouchableOpacity onPress={this.plusNumber.bind(this)}>
-                            <Text style={btnText}>+</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
-                        <TouchableOpacity style={updateButton} onPress={this.removeItem.bind(this)}>
-                            <Text style={updateButtonText}>Remove</Text>
-                        </TouchableOpacity>
-                    </View>
-                </View>
-            </View>
-        );
-    }
     minusNumber() {
         const { id, num } = this.props.item;
         if (num === 1) return;
@@ -71,6 +38,39 @@ class CartItem extends Component {
             { text: 'NO' }
         ], { cancelable: false });
     }
+
+    render() {
+        const {
+            container, image, infoContainer, btnsContainer, updateButton,
+            btnText, priceText, nameText, updateButtonText
+        } = styles;
+        const { name, price, num } = this.props.item;
+        return (
+            <View style={container}>
+                <Image source={{ uri: this.props.item.img }} style={image} />
+                <View style={infoContainer}>
+                    <Text style={nameText}>{name.toUpperCase()}</Text>
+                    <Text style={priceText}>Price: {price}</Text>
+                </View>
+                <View style={btnsContainer}>
+                    <View style={{ flexDirection: 'row' }}>
+                        <TouchableOpacity onPress={this.minusNumber.bind(this)}>
+                            <Text style={btnText}>-</Text>
+                        </TouchableOpacity>
+                        <Text style={btnText}>{num}</Text>
+                        <TouchableOpacity onPress={this.plusNumber.bind(this)}>
+                            <Text style={btnText}>+</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
+                        <TouchableOpacity style={updateButton} onPress={this.removeItem.bind(this)}>
+                            <Text style={updateButtonText}>Remove</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            </View>
+        );
+    }
 }
 
 const styles = StyleSheet.create({
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     },
     image: {
         width: 100,
-        height: 100 * 333 / 500
+        height: 100 * (333 / 500)
     },
     infoContainer: {
         paddingHorizontal: 8,

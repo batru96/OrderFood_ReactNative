@@ -4,6 +4,11 @@ import { connect } from 'react-redux';
 import icBack from '../../icons/ic_back.png';
 
 class Header extends Component {
+    goBack() {
+        const { navigation } = this.props;
+        if (navigation) navigation.goBack();
+    }
+
     render() {
         const { container, icon, title } = styles;
         return (
@@ -12,13 +17,9 @@ class Header extends Component {
                     <Image style={icon} source={icBack} />
                 </TouchableOpacity>
                 <Text style={title}>{this.props.title}</Text>
-                <View style={icon}/>
+                <View style={icon} />
             </View>
         );
-    }
-    goBack() {
-        const { navigation } = this.props;
-        if (navigation) navigation.goBack();
     }
 }
 
