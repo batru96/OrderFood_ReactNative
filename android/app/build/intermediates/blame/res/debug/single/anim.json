@@ -16,12 +16,12 @@
         "source": "/home/batru/Desktop/Tài liệu/OrderFood_ReactNative/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.53.3/res/anim/catalyst_push_up_out.xml"
     },
     {
-        "merged": "/home/batru/Learning/ReactNative/OrderFood/android/app/build/intermediates/res/merged/debug/anim/catalyst_fade_out.xml",
-        "source": "/home/batru/Learning/ReactNative/OrderFood/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.53.3/res/anim/catalyst_fade_out.xml"
-    },
-    {
         "merged": "/home/batru/Learning/ReactNative/OrderFood/android/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
         "source": "/home/batru/Learning/ReactNative/OrderFood/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/home/batru/Learning/ReactNative/OrderFood/android/app/build/intermediates/res/merged/debug/anim/catalyst_fade_out.xml",
+        "source": "/home/batru/Learning/ReactNative/OrderFood/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.53.3/res/anim/catalyst_fade_out.xml"
     },
     {
         "merged": "/home/batru/Learning/ReactNative/OrderFood/android/app/build/intermediates/res/merged/debug/anim/catalyst_fade_in.xml",

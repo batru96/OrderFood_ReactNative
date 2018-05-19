@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import {
-    View, Text, StyleSheet, FlatList, Image, TouchableOpacity, BackHandler
-} from 'react-native';
+import { View, StyleSheet, FlatList, BackHandler } from 'react-native';
 import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
 import MenuItem from './menu/MenuItem';
@@ -16,8 +14,8 @@ class Menu extends Component {
 
     componentDidMount() {
         BackHandler.addEventListener('hardwareBackPress', () => true);
-        const categoryRef = firebase.database().ref('Category');
-        categoryRef.once('value')
+        this.categoryRef = firebase.database().ref('Category');
+        this.categoryRef.once('value')
             .then(snapshot => {
                 const menus = [];
                 snapshot.forEach(item => {
@@ -32,6 +30,10 @@ class Menu extends Component {
                 type: 'REPLACE_CART',
                 cart: cartArray
             }));
+    }
+
+    componentWillUnmount() {
+        this.categoryRef.off();
     }
 
     render() {
