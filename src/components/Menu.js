@@ -10,7 +10,7 @@ class Menu extends Component {
     constructor(props) {
         super(props);
         this.state = { mang: [] };
-        this.mounted = true;        
+        this.mounted = true;
     }
 
     componentDidMount() {
@@ -18,10 +18,11 @@ class Menu extends Component {
         this.categoryRef = firebase.database().ref('Category');
         this.categoryRef.once('value')
             .then(snapshot => {
-                const menus = [];
-                snapshot.forEach(item => {
-                    const { name, image } = item.val();
-                    menus.push({ id: item.key, name, image });
+                // Push all keys into an array
+                const keys = Object.keys(snapshot.val());
+                const menus = keys.map(key => {
+                    const { name, image } = snapshot.val()[key];
+                    return { id: key, name, image };
                 });
                 if (this.mounted === true) this.setState({ mang: menus });
             })

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { View, FlatList, Image } from 'react-native';
+import { View, FlatList } from 'react-native';
 import firebase from 'react-native-firebase';
-import MenuItem from './menu/MenuItem';
 import Header from './product/Header';
 import ProductItem from './product/ProductItem';
 
@@ -19,11 +18,9 @@ class Products extends Component {
         const categoryItemRef = categoryRef.child(id).child('products');
         categoryItemRef.once('value')
             .then(snapshot => {
-                const products = [];
-                for (key in snapshot.val()) {
-                    const product = { ...snapshot.val()[key], id: key };
-                    products.push(product);
-                }
+                // Push all keys into an array named "keys"
+                const keys = Object.keys(snapshot.val());
+                const products = keys.map(key => ({ ...snapshot.val()[key], id: key }));
                 this.setState({
                     mang: products
                 });

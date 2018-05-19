@@ -1,39 +1,21 @@
 import React, { Component } from 'react';
-import {
-  StyleSheet, Image, Text, View, ImageBackground, TouchableOpacity, 
-  Alert
-} from 'react-native';
-import { connect } from 'react-redux';
+import { StyleSheet, Image, Text, View, ImageBackground, Alert } from 'react-native';
 import firebase from 'react-native-firebase';
-import Buttons from './login/Buttons';
 import SignIn from './login/SignIn';
 import SignUp from './login/SignUp';
 import background from './../images/my_bg.jpg';
 import logo from './../images/logo_eat_it.png';
 
-class Login extends Component {
-  componentWillMount() {
-    setTimeout(() => {
-      const { navigation } = this.props;
-      firebase.auth().signInAnonymouslyAndRetrieveData()
-        .then(data => {
-          navigation.navigate({ routeName: 'HOME' });
-        })
-        .catch(err => console.log(err));
-    }, 1000);
-  }
-  render() {
-    const { container } = styles;
-    return (
-      <ImageBackground style={container} source={background}>
-      </ImageBackground>
-    );
-  }
+const aString = `
+No matter what ever you are, 
+weather you are at home, or in the office, or on the beach - we will find you and we will feed you
+`;
 
-  showAlert(message) {
-    Alert.alert(undefined, message, [
-      { text: 'OK' }
-    ], { cancelable: false });
+class Login extends Component {
+  componentDidMount() {
+    firebase.auth().signInAnonymouslyAndRetrieveData()
+      .then(() => this.props.navigation.navigate({ routeName: 'HOME' }))
+      .catch(err => console.log(err));
   }
 
   getLayout() {
@@ -52,17 +34,30 @@ class Login extends Component {
         return (
           <View style={backgroundCotainer}>
             <Image source={logo} style={imageLogo} />
-            <Text style={text}>No matter what ever you are, weather you are at home, or in the office, or on the beach - we will find you and we will feed you.</Text>
+            <Text style={text}>{aString}</Text>
           </View>
         );
     }
   }
+  showAlert(message) {
+    Alert.alert(undefined, message, [
+      { text: 'OK' }
+    ], { cancelable: false });
+  }
 
   changeLayout(layoutValue) {
-    if (this.state.layout !== layoutValue)
+    if (this.state.layout !== layoutValue) {
       this.setState({
         layout: layoutValue
       });
+    }
+  }
+
+  render() {
+    const { container } = styles;
+    return (
+      <ImageBackground style={container} source={background} />
+    );
   }
 }
 
