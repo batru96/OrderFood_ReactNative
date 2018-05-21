@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import icMenu from '../../icons/ic_menu.png';
-import icSetting from '../../icons/ic_setting.png';
+import icSearch from '../../icons/ic_search.png';
 
 class Header extends Component {
-    onSetting() {
-        this.props.navigation.navigate('SETTING');
-    }
-
     render() {
         const { container, icon, title } = styles;
         return (
@@ -16,8 +12,8 @@ class Header extends Component {
                     <Image style={icon} source={icMenu} />
                 </TouchableOpacity>
                 <Text style={title}>Menu</Text>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('SETTING')}>
-                    <Image style={icon} source={icSetting} />
+                <TouchableOpacity>
+                    <Image style={icon} source={icSearch} />
                 </TouchableOpacity>
             </View>
         );

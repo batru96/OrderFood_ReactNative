@@ -1,20 +1,30 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import icIcon from '../icons/ic_menu.png';
+import icSettings from '../icons/ic_settings.png';
+import icCart from '../icons/ic_cart.png';
+import icHome from '../icons/ic_home.png';
+import icOrdered from '../icons/ic_book.png';
+import icSignOut from '../icons/ic_lock.png';
 
 class Drawer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            mang: [{ id: '1', name: 'Menu' }, { id: '2', name: 'Cart' },
-            { id: '3', name: 'Ordered' }, { id: '4', name: 'Signout' }]
+            mang: [
+                { id: '1', name: 'Home', img: icHome },
+                { id: '2', name: 'Cart', img: icCart },
+                { id: '3', name: 'Ordered', img: icOrdered },
+                { id: '5', name: 'Setting', img: icSettings },
+                { id: '4', name: 'Signout', img: icSignOut }
+            ],
         };
     }
 
     onItemPress(name) {
         const { navigation } = this.props;
         switch (name) {
-            case 'Menu':
+            case 'Home':
                 if (navigation.state.index === 0) navigation.navigate('DrawerToggle');
                 else navigation.navigate({ routeName: 'MENU' });
                 break;
@@ -26,6 +36,9 @@ class Drawer extends Component {
                 break;
             case 'Ordered':
                 navigation.navigate({ routeName: 'ORDER_HISTORY' });
+                break;
+            case 'Setting':
+                navigation.navigate('SETTING');
                 break;
             default:
                 navigation.navigate('DrawerClose');
@@ -43,7 +56,7 @@ class Drawer extends Component {
                         key={item.id}
                         style={button}
                     >
-                        <Image style={image} source={icIcon} />
+                        <Image style={image} source={item.img ? item.img : icIcon} />
                         <Text style={text}>{item.name}</Text>
                     </TouchableOpacity>
                 ))}
