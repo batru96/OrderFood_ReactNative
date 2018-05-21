@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, Image, Text, View, ImageBackground, Alert } from 'react-native';
+import {
+  StyleSheet, Image, Text, View, ImageBackground, Alert, TouchableOpacity
+} from 'react-native';
 import firebase from 'react-native-firebase';
 import SignIn from './login/SignIn';
 import SignUp from './login/SignUp';
@@ -12,12 +14,6 @@ weather you are at home, or in the office, or on the beach - we will find you an
 `;
 
 class Login extends Component {
-  componentDidMount() {
-    firebase.auth().signInAnonymouslyAndRetrieveData()
-      .then(() => this.props.navigation.navigate({ routeName: 'HOME' }))
-      .catch(err => console.log(err));
-  }
-
   getLayout() {
     const { backgroundCotainer, imageLogo, text } = styles;
     switch (this.state.layout) {
@@ -39,6 +35,16 @@ class Login extends Component {
         );
     }
   }
+
+  login() {
+    firebase.auth().signInAnonymouslyAndRetrieveData()
+      .then(data => {
+        this.props.navigation.navigate({ routeName: 'HOME' });
+        console.log(data);
+      })
+      .catch(err => console.log(err));
+  }
+
   showAlert(message) {
     Alert.alert(undefined, message, [
       { text: 'OK' }
@@ -54,9 +60,13 @@ class Login extends Component {
   }
 
   render() {
-    const { container } = styles;
+    const { container, button, buttonText } = styles;
     return (
-      <ImageBackground style={container} source={background} />
+      <ImageBackground style={container} source={background}>
+        <TouchableOpacity style={button} onPress={this.login.bind(this)}>
+          <Text style={buttonText}>Login</Text>
+        </TouchableOpacity>
+      </ImageBackground>
     );
   }
 }
@@ -84,6 +94,18 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: 'nabila'
   },
+  button: {
+    borderWidth: 1,
+    borderColor: 'white',
+    padding: 8,
+    margin: 16
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 24,
+    fontFamily: 'nabila',
+    textAlign: 'center'
+  }
 });
 
 export default Login;
