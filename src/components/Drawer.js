@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Image, Dimensions } from 'react-native';
 import icIcon from '../icons/ic_menu.png';
 import icSettings from '../icons/ic_settings.png';
 import icCart from '../icons/ic_cart.png';
 import icHome from '../icons/ic_home.png';
 import icOrdered from '../icons/ic_book.png';
 import icSignOut from '../icons/ic_lock.png';
+import imgDrawer from '../images/drawer.jpg';
 
+const { width } = Dimensions.get('window');
 class Drawer extends Component {
     constructor(props) {
         super(props);
@@ -16,7 +18,7 @@ class Drawer extends Component {
                 { id: '2', name: 'Cart', img: icCart },
                 { id: '3', name: 'Ordered', img: icOrdered },
                 { id: '5', name: 'Setting', img: icSettings },
-                { id: '4', name: 'Signout', img: icSignOut }
+                { id: '4', name: 'Sign out', img: icSignOut }
             ],
         };
     }
@@ -47,9 +49,13 @@ class Drawer extends Component {
     }
 
     render() {
-        const { container, button, text, image } = styles;
+        const { container, button, text, image, imageDrawer } = styles;
         return (
             <View style={container}>
+                <Image
+                    style={imageDrawer}
+                    source={imgDrawer}
+                />
                 {this.state.mang.map(item => (
                     <TouchableOpacity
                         onPress={() => this.onItemPress(item.name)}
@@ -69,7 +75,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#494948',
-        justifyContent: 'center'
+        // justifyContent: 'center'
     },
     button: {
         padding: 8,
@@ -86,6 +92,11 @@ const styles = StyleSheet.create({
     },
     text: {
         color: 'white'
+    },
+    imageDrawer: {
+        width: width * 0.7,
+        height: (width * 0.7) * (375 / 500),
+        marginBottom: 16
     }
 });
 

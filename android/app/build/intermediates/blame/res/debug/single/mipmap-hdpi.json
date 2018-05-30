@@ -1,10 +1,14 @@
 [
     {
-        "merged": "/home/batru/Learning/ReactNative/OrderFood/android/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
-        "source": "/home/batru/Learning/ReactNative/OrderFood/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+        "merged": "C:\\home\\batru\\Desktop\\Tài liệu\\OrderFood_ReactNative\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
+        "source": "C:\\home\\batru\\Desktop\\Tài liệu\\OrderFood_ReactNative\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "/home/batru/Desktop/Tài liệu/OrderFood_ReactNative/android/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
-        "source": "/home/batru/Desktop/Tài liệu/OrderFood_ReactNative/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+        "merged": "C:\\Users\\hhkhoa\\Desktop\\OrderFood_ReactNative\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
+        "source": "C:\\Users\\hhkhoa\\Desktop\\OrderFood_ReactNative\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\home\\batru\\Learning\\ReactNative\\OrderFood\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
+        "source": "C:\\home\\batru\\Learning\\ReactNative\\OrderFood\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     }
 ]
