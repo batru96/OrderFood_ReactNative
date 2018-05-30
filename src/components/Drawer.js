@@ -17,8 +17,8 @@ class Drawer extends Component {
                 { id: '1', name: 'Home', img: icHome },
                 { id: '2', name: 'Cart', img: icCart },
                 { id: '3', name: 'Ordered', img: icOrdered },
-                { id: '5', name: 'Setting', img: icSettings },
-                { id: '4', name: 'Sign out', img: icSignOut }
+                { id: '4', name: 'Setting', img: icSettings },
+                { id: '5', name: 'Sign out', img: icSignOut }
             ],
         };
     }
@@ -33,7 +33,7 @@ class Drawer extends Component {
             case 'Cart':
                 navigation.navigate({ routeName: 'CART' });
                 break;
-            case 'Signout':
+            case 'Sign out':
                 navigation.navigate({ routeName: 'SIGN_IN' });
                 break;
             case 'Ordered':
@@ -49,7 +49,7 @@ class Drawer extends Component {
     }
 
     render() {
-        const { container, button, text, image, imageDrawer } = styles;
+        const { container, button, text, image, imageDrawer, textContainer, textBottom } = styles;
         return (
             <View style={container}>
                 <Image
@@ -66,6 +66,9 @@ class Drawer extends Component {
                         <Text style={text}>{item.name}</Text>
                     </TouchableOpacity>
                 ))}
+                <View style={textContainer}>
+                    <Text style={textBottom}>Develop by Hoang Khoa - 56136415</Text>
+                </View>
             </View>
         );
     }
@@ -75,7 +78,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#494948',
-        // justifyContent: 'center'
     },
     button: {
         padding: 8,
@@ -96,7 +98,17 @@ const styles = StyleSheet.create({
     imageDrawer: {
         width: width * 0.7,
         height: (width * 0.7) * (375 / 500),
-        marginBottom: 16
+    },
+    textContainer: {
+        flex: 1,
+        justifyContent: 'flex-end', 
+        alignItems: 'center',
+        marginBottom: 8
+    },
+    textBottom: {
+        color: 'white',
+        fontWeight: 'bold',
+        fontStyle: 'italic'
     }
 });
 
