@@ -1,4 +1,4 @@
-#Mon May 14 10:20:47 ICT 2018
+#Sun Jun 10 16:55:07 ICT 2018
 base.0=/home/batru/Learning/ReactNative/OrderFood/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
 renamed.0=classes.dex
 file.0=/home/batru/Learning/ReactNative/OrderFood/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex

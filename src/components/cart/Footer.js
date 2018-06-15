@@ -11,48 +11,45 @@ class Footer extends Component {
         super(props);
         this.state = {
             address: '',
-            isShowPhoneInput: false,
-            phone: null
         };
     }
 
     componentDidMount() {
         getPhone()
             .then(phone => {
-                if (phone == null) {
-                    Alert.alert('Please provide your phone number');
-                    this.setState({
-                        isShowPhoneInput: true,
-                    });
-                } else {
-                    this.setState({ phone });
-                }
+                this.phoneNumber = phone;
             })
             .catch(error => console.log(error));
     }
 
     submit() {
-        const { address, phone } = this.state;
-        const { cartArray, totalPrice } = this.props;
-        if (address === '') {
-            Alert.alert(undefined, 'Enter your address!');
-            return;
-        }
-
-        const value = { phone, address, cartArray, status: 0, totalPrice };
-        const orderedRef = firebase.database().ref().child('Ordered');
-        orderedRef.push().set(value, (err) => {
-            if (err) {
-                console.log(err);
+        if (this.phoneNumber) {
+            const { address } = this.state;
+            const { cartArray, totalPrice } = this.props;
+            if (address === '') {
+                Alert.alert(undefined, 'Enter your address!');
                 return;
             }
-            Alert.alert(undefined, 'Order success', undefined, { cancelable: false });
-            this.setState({ address: '' });
-            this.props.toggle();
-            this.props.dispatch({
-                type: 'CLEAR_CART'
+
+            const value = { phone: this.phoneNumber, address, cartArray, status: 0, totalPrice };
+            const orderedRef = firebase.database().ref().child('Ordered');
+            orderedRef.push().set(value, (err) => {
+                if (err) {
+                    console.log(err);
+                    return;
+                }
+                Alert.alert(undefined, 'Order success', undefined, { cancelable: false });
+                this.setState({ address: '' });
+                this.props.toggle();
+                this.props.dispatch({
+                    type: 'CLEAR_CART'
+                });
             });
-        });
+        } else {
+            Alert.alert('Sorry!', 'You have to provide your phone number',
+                [{ text: 'OK', onPress: () => this.props.navigation.navigate('SETTINGS') }]
+            );
+        }
     }
 
     render() {

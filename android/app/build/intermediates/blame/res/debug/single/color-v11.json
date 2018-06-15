@@ -1,18 +1,34 @@
 [
     {
+        "merged": "/home/batru/Learning/ReactNative/OrderFood/android/C:\\home\\batru\\Desktop\\Tài liệu\\OrderFood_ReactNative\\android\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/home/batru/Learning/ReactNative/OrderFood/android/C:\\home\\batru\\Desktop\\Tài liệu\\OrderFood_ReactNative\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
         "merged": "/home/batru/Learning/ReactNative/OrderFood/android/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
         "source": "/home/batru/Learning/ReactNative/OrderFood/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
     },
     {
-        "merged": "/home/batru/Desktop/Tài liệu/OrderFood_ReactNative/android/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
-        "source": "/home/batru/Desktop/Tài liệu/OrderFood_ReactNative/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
+        "merged": "/home/batru/Learning/ReactNative/OrderFood/android/C:\\home\\batru\\Learning\\ReactNative\\OrderFood\\android\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "/home/batru/Learning/ReactNative/OrderFood/android/C:\\home\\batru\\Learning\\ReactNative\\OrderFood\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "/home/batru/Learning/ReactNative/OrderFood/android/C:\\home\\batru\\Desktop\\Tài liệu\\OrderFood_ReactNative\\android\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "/home/batru/Learning/ReactNative/OrderFood/android/C:\\home\\batru\\Desktop\\Tài liệu\\OrderFood_ReactNative\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "/home/batru/Learning/ReactNative/OrderFood/android/C:\\home\\batru\\Learning\\ReactNative\\OrderFood\\android\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/home/batru/Learning/ReactNative/OrderFood/android/C:\\home\\batru\\Learning\\ReactNative\\OrderFood\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
     },
     {
         "merged": "/home/batru/Learning/ReactNative/OrderFood/android/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
         "source": "/home/batru/Learning/ReactNative/OrderFood/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
     },
     {
-        "merged": "/home/batru/Desktop/Tài liệu/OrderFood_ReactNative/android/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
-        "source": "/home/batru/Desktop/Tài liệu/OrderFood_ReactNative/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
+        "merged": "/home/batru/Learning/ReactNative/OrderFood/android/C:\\Users\\hhkhoa\\Desktop\\OrderFood_ReactNative\\android\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/home/batru/Learning/ReactNative/OrderFood/android/C:\\Users\\hhkhoa\\Desktop\\OrderFood_ReactNative\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "/home/batru/Learning/ReactNative/OrderFood/android/C:\\Users\\hhkhoa\\Desktop\\OrderFood_ReactNative\\android\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "/home/batru/Learning/ReactNative/OrderFood/android/C:\\Users\\hhkhoa\\Desktop\\OrderFood_ReactNative\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
     }
 ]

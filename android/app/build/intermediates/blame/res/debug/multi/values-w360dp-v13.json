@@ -1,5 +1,53 @@
 [
     {
+        "outputFile": "/home/batru/Learning/ReactNative/OrderFood/android/C:\\home\\batru\\Learning\\ReactNative\\OrderFood\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w360dp-v13\\values-w360dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 54,
+                    "endOffset": 105
+                },
+                "from": {
+                    "file": "/home/batru/Learning/ReactNative/OrderFood/android/C:\\home\\batru\\Learning\\ReactNative\\OrderFood\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-w360dp\\values-w360dp.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 283,
+                        "endColumn": 54,
+                        "endOffset": 333
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/home/batru/Learning/ReactNative/OrderFood/android/C:\\home\\batru\\Desktop\\Tài liệu\\OrderFood_ReactNative\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w360dp-v13\\values-w360dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 54,
+                    "endOffset": 105
+                },
+                "from": {
+                    "file": "/home/batru/Learning/ReactNative/OrderFood/android/C:\\home\\batru\\Desktop\\Tài liệu\\OrderFood_ReactNative\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-w360dp\\values-w360dp.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 283,
+                        "endColumn": 54,
+                        "endOffset": 333
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "/home/batru/Learning/ReactNative/OrderFood/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w360dp-v13/values-w360dp-v13.xml",
         "map": [
             {
@@ -24,7 +72,7 @@
         ]
     },
     {
-        "outputFile": "/home/batru/Desktop/Tài liệu/OrderFood_ReactNative/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w360dp-v13/values-w360dp-v13.xml",
+        "outputFile": "/home/batru/Learning/ReactNative/OrderFood/android/C:\\Users\\hhkhoa\\Desktop\\OrderFood_ReactNative\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w360dp-v13\\values-w360dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -35,7 +83,7 @@
                     "endOffset": 105
                 },
                 "from": {
-                    "file": "/home/batru/Desktop/Tài liệu/OrderFood_ReactNative/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-w360dp/values-w360dp.xml",
+                    "file": "/home/batru/Learning/ReactNative/OrderFood/android/C:\\Users\\hhkhoa\\Desktop\\OrderFood_ReactNative\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-w360dp\\values-w360dp.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
