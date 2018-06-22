@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View, FlatList } from 'react-native';
 import firebase from 'react-native-firebase';
-import Header from './product/Header';
-import ProductItem from './product/ProductItem';
+import Header from '../components/product/Header';
+import ProductItem from '../components/product/ProductItem';
 
 class Products extends Component {
     constructor(props) {

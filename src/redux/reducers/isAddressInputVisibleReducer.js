@@ -3,6 +3,6 @@ const isAddressInputVisibleReducer = (state = false, action) => {
         return !state;
     }
     return state;
-}
+};
 
 export default isAddressInputVisibleReducer;

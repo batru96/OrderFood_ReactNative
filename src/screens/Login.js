@@ -3,10 +3,10 @@ import {
   StyleSheet, Image, Text, View, ImageBackground, Alert, TouchableOpacity
 } from 'react-native';
 import firebase from 'react-native-firebase';
-import SignIn from './login/SignIn';
-import SignUp from './login/SignUp';
-import background from './../images/my_bg.jpg';
-import logo from './../images/logo_eat_it.png';
+import SignIn from '../components/login/SignIn';
+import SignUp from '../components/login/SignUp';
+import background from '../images/my_bg.jpg';
+import logo from '../images/logo_eat_it.png';
 
 const aString = `
 No matter what ever you are, 

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import Header from './cart/Header';
-import ButtonPhone from './order/ButtonPhone';
-import ListOrder from './order/ListOrder';
+import Header from '../components/cart/Header';
+import ButtonPhone from '../components/order/ButtonPhone';
+import ListOrder from '../components/order/ListOrder';
 import getPhone from '../api/getPhoneNumber';
 
 export default class OrderHistory extends Component {

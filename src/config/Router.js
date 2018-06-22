@@ -1,11 +1,11 @@
 import { StackNavigator, DrawerNavigator } from 'react-navigation';
-import Login from './components/Login';
-import Menu from './components/Menu';
-import Products from './components/Products';
-import Drawer from './components/Drawer';
-import Cart from './components/Cart';
-import OrderHistory from './components/OrderHistory';
-import Setting from './components/Setting';
+import Login from '../screens/Login';
+import Menu from '../screens/Menu';
+import Products from '../screens/Products';
+import Drawer from '../screens/Drawer';
+import Cart from '..//screens/Cart';
+import OrderHistory from '../screens/OrderHistory';
+import Setting from '../screens/Setting';
 
 const navigationOptions = {
     header: null

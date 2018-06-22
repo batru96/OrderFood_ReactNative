@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { View, StyleSheet, FlatList, BackHandler } from 'react-native';
 import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
-import MenuItem from './menu/MenuItem';
-import Header from './menu/Header';
+import MenuItem from '../components/menu/MenuItem';
+import Header from '../components/menu/Header';
 import getCart from '../api/GetCart';
 
 class Menu extends Component {

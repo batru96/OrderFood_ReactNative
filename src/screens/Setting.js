@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { 
     View, Text, StyleSheet, TextInput, TouchableOpacity, Dimensions, Alert 
 } from 'react-native';
-import Header from './cart/Header';
+import Header from '../components/cart/Header';
 import getPhone from '../api/getPhoneNumber';
 import savePhone from '../api/savePhoneNumber';
 

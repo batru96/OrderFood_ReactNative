@@ -3,9 +3,9 @@ import {
     View, Text, FlatList, TouchableOpacity, StyleSheet, Alert,
 } from 'react-native';
 import { connect } from 'react-redux';
-import CartItem from './cart/CartItem';
-import Header from './cart/Header';
-import Footer from './cart/Footer';
+import CartItem from '../components/cart/CartItem';
+import Header from '../components/cart/Header';
+import Footer from '../components/cart/Footer';
 
 class Cart extends Component {
     constructor(props) {
