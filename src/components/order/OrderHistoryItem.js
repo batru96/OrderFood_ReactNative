@@ -4,9 +4,9 @@ import { View, Text, StyleSheet } from 'react-native';
 class OrderHistoryItem extends Component {
     getStatus() {
         switch (this.props.item.status) {
-            case 1: return 'ON MY WAY!';
+            case 1: return 'SENDING';
             case 2: return 'RECEIVED';
-            default: return 'PLACED';
+            default: return 'CHECKING';
         }
     }
     render() {

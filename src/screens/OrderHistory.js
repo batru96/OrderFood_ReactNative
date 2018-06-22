@@ -1,38 +1,32 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import Header from '../components/cart/Header';
-import ButtonPhone from '../components/order/ButtonPhone';
 import ListOrder from '../components/order/ListOrder';
-import getPhone from '../api/getPhoneNumber';
+import Footer from '../components/order/Footer';
+import { SHOW_ALL } from '../global';
 
 export default class OrderHistory extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isInputOpen: false
+            stateScreen: SHOW_ALL
         };
     }
 
-    componentDidMount() {
-        getPhone()
-        .then(phone => {
-            if (phone == null) this.setState({ isInputOpen: true });
-        })
-        .catch(error => console.log(error));
-    }
-
-    toggleButtonPhone() {
-        this.setState({
-            isInputOpen: !this.state.isInputOpen
-        });
+    replaceState(newState) {
+        if (newState !== this.state.stateScreen) {
+            this.setState({
+                stateScreen: newState
+            });
+        }
     }
 
     render() {
         return (
-            <View>
+            <View style={{ flex: 1 }}>
                 <Header navigation={this.props.navigation} title='Order History' />
-                {this.state.isInputOpen ?
-                    <ButtonPhone toggle={this.toggleButtonPhone.bind(this)} /> : <ListOrder />}
+                <ListOrder showState={this.state.stateScreen} />
+                <Footer replaceState={this.replaceState.bind(this)} />
             </View>
         );
     }
