@@ -6,6 +6,7 @@ import Drawer from '../screens/Drawer';
 import Cart from '..//screens/Cart';
 import OrderHistory from '../screens/OrderHistory';
 import Setting from '../screens/Setting';
+import Search from '../screens/Search';
 
 const navigationOptions = {
     header: null
@@ -28,6 +29,10 @@ const DrawerSide = DrawerNavigator({
     },
     SETTING: { 
         screen: Setting
+    },
+    SEARCH: {
+        screen: Search,
+        navigationOptions
     }
 },
     {

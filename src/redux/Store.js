@@ -6,7 +6,7 @@ import phoneReducer from './reducers/phoneReducer';
 const reducer = combineReducers({
     cartArray: CartReducer,
     isInputVisible: isAddressInputReducer,
-    phone: phoneReducer
+    phone: phoneReducer,
 });
 
 const store = createStore(reducer);

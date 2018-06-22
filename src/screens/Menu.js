@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, FlatList, BackHandler } from 'react-native';
+import { View, FlatList, BackHandler } from 'react-native';
 import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
 import MenuItem from '../components/menu/MenuItem';
@@ -27,6 +27,7 @@ class Menu extends Component {
                 if (this.mounted === true) this.setState({ mang: menus });
             })
             .catch(err => console.log(err));
+
         getCart()
             .then(cartArray => this.props.dispatch({
                 type: 'REPLACE_CART',
@@ -39,11 +40,16 @@ class Menu extends Component {
         this.categoryRef.off('value');
     }
 
+    updateMang(newMang) {
+        this.setState({
+            mang: newMang
+        });
+    }
+
     render() {
-        const { container } = styles;
         const { navigation } = this.props;
         return (
-            <View style={container}>
+            <View style={{ flex: 1, backgroundColor: 'white' }}>
                 <Header navigation={navigation} />
                 <FlatList
                     data={this.state.mang}
@@ -54,13 +60,5 @@ class Menu extends Component {
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: 'white'
-    }
-});
-
 
 export default connect()(Menu);
