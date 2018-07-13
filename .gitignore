@@ -1,2 +1,4 @@
-/node_modules/*
-/android/
+node_modules/
+ios/*
+android/*
+bin/

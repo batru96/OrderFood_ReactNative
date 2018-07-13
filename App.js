@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import MainStack from './src/Router';
+import MainStack from './src/config/Router';
 import store from '././src/redux/Store';
 
 export default class App extends Component {
