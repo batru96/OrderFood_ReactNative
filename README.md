@@ -1,5 +1,5 @@
 # Installation
- 1. Clone project: http://google.com
+ 1. Clone project: https://github.com/batru96/OrderFood_ReactNative.git
  2. Install the dependencies and run the application.
     ```sh
     $ cd order-food
